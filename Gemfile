@@ -6,6 +6,12 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'citygate', git: 'git://github.com/zamith/citygate.git'
+
+group :development do
+  gem 'therubyracer'
+  gem 'execjs'
+end
 
 
 # Gems used only for assets and not required
