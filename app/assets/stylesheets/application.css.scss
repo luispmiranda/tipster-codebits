@@ -14,20 +14,34 @@
 
 body {
   position: relative;
-  padding-top: 40px
+  padding-top: 40px;
+
+  #sidebar {
+
+  background: white;
+  padding: 20px 0px 20px 0px;
+  width: 240px;
+  bottom:0px;
+  display:block;
+  min-height: 100%;
+  border-right: 1px solid #DDDDDD;
+  }
+
+
 }
 
 .well {
 	margin-top: 20px;
 }
 
-#content {
-	padding: 20px 0;
+#main-content {
 
+  background: white;
+  padding: 0px 5px 0px 0px;
 	// div {
 	// 	margin: 0 20px;
 	// }
-
+  width: 660px;
 	.field {
 		padding: 10px 0;
 
@@ -52,4 +66,6 @@ body {
 		font-family: Arial, sans-serif;
 		font-weight: bold;
 	}
+
+
 }

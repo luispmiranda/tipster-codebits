@@ -65,13 +65,38 @@
     </header>
 
     <div class="container">
-          <div id="content" class="span12">
+          <div class="row-fluid">
+
+            <div id="sidebar" class="span3">
+
+
+              <ul class="nav nav-list">
+                <li class="nav-header">Profile</li>
+                <li><%= link_to "Link1", "/path1"  %></li>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
+              </ul>
+              <hr/>
+              <ul class="nav nav-list">
+                <li class="nav-header">Tiplists</li>
+                <li><%= link_to "Link1", "/path1"  %></li>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
+              </ul>
+            </div><!--/.well -->
+
+
+
+
+
+
+          <div id="main-content" class="span9">
              <%= yield %>
           </div>
         </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2012</p>
+
       </footer>
 
     </div> <!-- /container -->
