@@ -5,4 +5,7 @@ class Tip < ActiveRecord::Base
 
   #### Accessors
   attr_accessible :content, :title
+
+  #### Scopes
+  scope :by_list, lambda { |list| where list_id: list.id }
 end
