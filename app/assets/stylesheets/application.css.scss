@@ -13,56 +13,33 @@
  */
 
 body {
-
-  margin: 0px;
-
-  color: #333;
-  font-family: helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 1.4em;
-  -webkit-font-smoothing:antialiased;
-  background: #d3d4d6 none no-repeat center top;
-  margin: 0px auto;
+  position: relative;
+  padding-top: 40px
 }
 
-h3 {
-  font-size: 32px;
+.well {
+	margin-top: 20px;
 }
 
+#content {
+	padding: 20px 0;
 
-.topbar {
-  margin: 0px px;
-position:static;
-margin: 0px;
-background: white;
-color:#343434;
-height: 40px;
+	// div {
+	// 	margin: 0 20px;
+	// }
 
-font-size: 13px;
-border-bottom:1px solid rbga(0,0,0,0.15);
-box-shadow: 0 1px 0px #EEE;
+	.field {
+		padding: 10px 0;
 
+		label {
+			font-weight: bold;
+			display: inline;
+			padding: 0 20px;
+		}
 
-
-}
-
-.topbar .container {
-
-width: 940px;
-margin-left: auto;
-margin-right: auto;
-}
-
-
-
-.wrapper {
-background: red;
-margin-top: 20px;
-margin-left:auto;
-margin-right: auto;
-width: 800px;
-display:block;
-
-
-
+		input[type="text"] {
+			width: 80%;
+			display: inline;
+		}
+	}
 }
