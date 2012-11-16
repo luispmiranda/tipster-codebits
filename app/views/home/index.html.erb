@@ -1,0 +1,17 @@
+<div class="row-fluid">
+  <div class="span4">
+    <img src="https://dev.twitter.com/sites/default/files/images_documentation/sign-in-with-twitter-gray.png" alt="Sign in with Twitter" title="Sign in with Twitter" class="login_button" />
+  </div>
+  
+  <div class="span4">
+    <%= link_to citygate.new_user_session_path do %>
+      <button class="btn login_button">Login</button>
+    <% end %>
+  </div>
+
+  <div class="span4">
+    <%= link_to citygate.new_user_registration_path do %>
+      <button class="btn btn-inverse login_button">Sign up</button>
+    <% end %>
+  </div>
+</div>
