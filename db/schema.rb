@@ -11,10 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121115224959) do
+ActiveRecord::Schema.define(:version => 20121116180342) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.string   "type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -73,9 +74,16 @@ ActiveRecord::Schema.define(:version => 20121115224959) do
   add_index "citygate_users", ["invited_by_id"], :name => "index_citygate_users_on_invited_by_id"
   add_index "citygate_users", ["reset_password_token"], :name => "index_citygate_users_on_reset_password_token", :unique => true
 
+  create_table "follows", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "list_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "lists", :force => true do |t|
     t.integer  "user_id"
-    t.text     "title"
+    t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -2,6 +2,7 @@ class Tip < ActiveRecord::Base
 
   #### Relations
   belongs_to :list
+  has_many :favorites
 
   #### Accessors
   attr_accessible :content, :title
