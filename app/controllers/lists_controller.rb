@@ -1,5 +1,7 @@
 class ListsController < ApplicationController
 
+  load_and_authorize_resource class: 'Citygate::User'
+
   before_filter :get_list_by_id, except: [:index, :new, :create]
 
   # GET /lists
@@ -15,7 +17,7 @@ class ListsController < ApplicationController
 
   # GET /lists/new
   def new
-    @list = List.new
+    @list = current_user.lists.build
   end
 
   # GET /lists/1/edit
