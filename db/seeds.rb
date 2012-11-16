@@ -11,3 +11,8 @@ unless Citygate::User.find_by_email('admin@tipster.com')
   user.role = Citygate::Role.find_by_name('Admin')
   user.save
 end
+
+langs = File.open 'db/languages.txt'
+langs.lines.each do |lang|
+  Category.find_or_create_by_name lang
+end
