@@ -60,24 +60,23 @@
     </div>
 
     <header>
-      <!-- TODO -->
+      <%= render 'layouts/top_nav' %>
     </header>
 
     <div class="container">
-        <!-- <div class="row-fluid">
+        <div class="row-fluid">
           <div class="span3">
             <div class="well sidebar-nav">
               <h3>Sidebar</h3>
               <ul class="nav nav-list">
                 <li class="nav-header">Sidebar</li>
-                <li><%# link_to "Link1", "/path1"  %></li>
-                <li><%# link_to "Link2", "/path2"  %></li>
-                <li><%# link_to "Link3", "/path3"  %></li>
+                <li><%= link_to "Link1", "/path1"  %></li>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
               </ul>
-            </div>
-          </div>
-          <div id="content" class="span9"> -->
-          <div id="content" class="span12">
+            </div><!--/.well -->
+          </div><!--/span-->
+          <div id="content" class="span9">
              <%= yield %>
           </div>
         </div><!--/row-->
