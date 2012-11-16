@@ -1,0 +1,54 @@
+Ruby
+JavaScript
+Perl
+Python
+PHP
+Java
+C
+C++
+Objective-C
+C#
+Shell
+VimL
+ActionScript
+Erlang
+Haskell
+Scala
+Clojure
+Lua
+Groovy
+Scheme
+Go
+OCaml
+Objective-J
+D
+R
+ColdFusion
+Tcl
+ooc
+FORTRAN
+ASP
+Smalltalk
+HaXe
+F#
+Verilog
+VHDL
+Io
+SuperCollider
+Arc
+Delphi
+Assembly
+Boo
+Nu
+Eiffel
+CoffeeScript
+Vala
+Racket
+Self
+Duby
+Max/MSP
+sclang
+Common Lisp
+Emacs Lisp
+Pure Data
+Visual Basic
