@@ -8,4 +8,5 @@ Tipster::Application.routes.draw do
     resources :tips
   end
 
+  match '/profile' => 'users#profile'
 end
