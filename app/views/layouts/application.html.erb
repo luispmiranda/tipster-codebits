@@ -11,6 +11,7 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
+
     <link rel="stylesheet" href="sticky.css" />
     <%= stylesheet_link_tag "bootstrap", :media => "all" %>
     <%= stylesheet_link_tag "bootstrap-responsive", :media => "all" %>
@@ -41,12 +42,6 @@
 
     <%= render 'layouts/navbar' %>
 
-    <header>
-      <% if notice %>
-        <p class="notice"><%= notice %></p>
-      <% end %>
-    </header>
-
     <div class="container">
       <div class="content">
 
@@ -58,7 +53,7 @@
                 <li class="nav-header">tipster</li>
                 <li>
                   <%= link_to '/path1' do %>
-                    <%= image_tag 'glyphicons/link.png', :class => 'icon' %>
+                    <i class='icon-link'></i>
                     <span class="icon">Feed</span>
                   <% end %>
                 </li>
@@ -72,17 +67,39 @@
                 <li><%#= link_to tiplist.title, tiplist_path(tiplist) %></li>
                 <%# end %>
                 <li>
-                  <%= link_to 'users/auth/twitter' do %>
-                    <%= image_tag 'glyphicons/link.png', :class => 'icon' %>
+
+
                     <span class="icon">Bash pro</span>
-                  <% end %>
+
                 </li>
                 <li><%= link_to "Link2", "/path2"  %></li>
                 <li><%= link_to "Link3", "/path3"  %></li>
+
+                <li class="divider"></li>
+
+              <br/>
+              <%= link_to new_list_path do %>
+              <button>
+                    <i class='icon-plus'></i>
+                    <span class="icon">Add tiplist</span>
+              </button>
+              <% end %>
+
+
+
               </ul>
+
+
+
+
+
+
 
               </div>
               <div class="span9">
+              <% if notice %>
+                <p class="notice"><%= notice %></p>
+              <% end %>
                 <%= yield %>
               </div>
             </div>
@@ -104,3 +121,4 @@
     <%= javascript_include_tag 'application', 'bootstrap' %>
   </body>
 </html>
+
