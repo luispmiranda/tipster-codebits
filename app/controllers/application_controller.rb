@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :load_user_tips
+
   rescue_from CanCan::AccessDenied do |exception|
     if user_signed_in?
       flash[:error] = "Please don't try to go there. Stuff would break :("
@@ -11,5 +13,13 @@ class ApplicationController < ActionController::Base
       redirect_to citygate.new_user_session_path
     end
   end
+
+
+  protected
+
+    def load_user_tips
+      @lists = []
+      @lists = current_user.lists if user_signed_in?
+    end
 
 end
