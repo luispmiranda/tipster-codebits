@@ -1,5 +1,7 @@
 class TipsController < ApplicationController
 
+  load_and_authorize_resource class: 'Citygate::User', only: [:new, :create]
+
   before_filter :load_list
 
   # GET /tips
@@ -50,6 +52,11 @@ class TipsController < ApplicationController
     @tip = Tip.find(params[:id])
     @tip.destroy
     redirect_to :root
+  end
+
+  def favorite
+    @tip = Tip.find(params[:id])
+    @tip.favoriters << current_user
   end
 
 
