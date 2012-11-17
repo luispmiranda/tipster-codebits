@@ -30,7 +30,9 @@
 
 <div class="row-fluid">
   <div class="span12">
-    <pre><code><%= @tip.content %></code></pre>
+    <%= "<div class=\"#{@list.category.name.downcase}\">".html_safe %>
+      <pre><code><%= @tip.content %></code></pre>
+    </div>
   </div>
 </div>
 

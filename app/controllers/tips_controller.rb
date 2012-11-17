@@ -41,7 +41,7 @@ class TipsController < ApplicationController
     @tip = Tip.find(params[:id])
 
     if @tip.update_attributes(params[:tip])
-      redirect_to @tip, notice: 'Tip was successfully updated.'
+      redirect_to list_tip_url(@list), notice: 'Tip was successfully updated.'
     else
       render action: "edit"
     end
