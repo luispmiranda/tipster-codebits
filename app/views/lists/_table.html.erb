@@ -1,0 +1,12 @@
+<table class="table">
+  <thead>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </thead>
+
+  <% lists.each do |list| %>
+    <%= render 'lists/row', :list => list %>
+  <% end %>
+</table>

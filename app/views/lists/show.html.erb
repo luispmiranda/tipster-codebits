@@ -1,59 +1,59 @@
-<% if notice %>
-  <p id="notice"><%= notice %></p>
-<% end %>
+<div class="row-fluid">
+  <div class="span6">
+    <h1><%= @list.title %></h1>
+  </div>
 
-<div class="row">
-    <div class="span5">
-      <h4><%= @list.title %></h4><span><%= @list.category.name %></span>
-    </div>
+  <div class="span4">
+    <% if can? :manage, @list %>
+      <div class="btn-group pull-right">
+        <%= link_to new_list_tip_path(@list) do %>
+          <button class="btn">
+            <i class="icon-plus"></i>
+            <span class="icon">Add Tip</span>
+          </button>
+        <% end %>
+        <%= link_to edit_list_path do %>
+          <button class="btn">
+            <i class="icon-edit"></i>
+            <span class="icon">Edit</span>
+          </button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
-    <div class="span2">
-             <ul>
-              <li>
-              <%= link_to edit_list_path do %>
-                    <i class='icon-plus'></i>
-                    <span class="icon">Add tip</span>
-              <% end %>
-              </li>
-            </ul>
+  <div class="span2">
+    <div class="btn-group pull-right">
+      <%= link_to follow_list_path(@list) do %>
+        <button class="btn">
+          <i class="icon-pushpin"></i>
+          <span class="icon">Follow</span>
+        </button>
+      <% end %>
     </div>
-
-    <div class="span2">
-              <ul>
-              <li>
-              <%= link_to edit_list_path do %>
-                    <i class='icon-edit'></i>
-                    <span class="icon">Edit</span>
-              <% end %>
-              </li>
-            </ul>
-    </div>
+  </div>
 </div>
 
-
-<br/>
-<br/>
-
-<p><%= @list.desc %></p>
-
-
-
-
-<hr/>
+<div class="row-fluid">
+  <div class="span2">
+    <span class="label label-inverse"><%= @list.category.name %></span>
+  </div>
+  <div class="span10">
+    <p><%= @list.desc %><p>
+  </div>
+</div>
 
 <% if @list.tips.empty? %>
-  <p> There are no tips yet. <%= link_to "Why don't you add one?", edit_list_path %></p>
-
+  <p>There are no tips yet. <strong><%= link_to 'Why don\'t you add one?', new_list_tip_path(@list) %></strong></p>
+<% else %>
+  <%= render 'tips/table', :tips => @list.tips %>
 <% end %>
 
-<% @list.tips.each do |tip| %>
-<div class="row">
-  <h3>Title</h3>
-  <h3>Content</h3
+<div class="row-fluid">
+  <div class="span12">
+      <%= link_to lists_path do %>
+        <i class="icon-arrow-left"></i>
+        <span class="icon">Back</span>
+      <% end %>
+  </div>
 </div>
-<% end %>
-
-
-
-<br />
-

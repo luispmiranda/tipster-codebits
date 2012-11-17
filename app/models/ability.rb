@@ -11,9 +11,9 @@ class Ability
       can :manage, Citygate::User, id: user.id
       #can :manage, :all
 
-      #can :manage, List#, user_id: user.id
+      can :manage, List, user_id: user.id
       #can :new, List
-      #can :manage, Tip#, list:     { user_id: user.id }
+      can :manage, Tip, list:     { user_id: user.id }
     end
   end
 

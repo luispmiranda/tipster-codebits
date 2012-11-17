@@ -52,7 +52,7 @@
                 <ul class="nav nav-list">
                 <li class="nav-header">dashboard</li>
                 <li>
-                  <%= link_to '/path1' do %>
+                  <%= link_to '/feed' do %>
                     <i class='icon-link'></i>
                     <span class="icon">Feed</span>
                   <% end %>
@@ -64,30 +64,45 @@
                   <% end %>
                 </li>
 
+                <li>
+                  <%= link_to '/follows' do %>
+                    <i class='icon-link'></i>
+                    <span class="icon">Follows</span>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to '/favorites' do %>
+                    <i class='icon-link'></i>
+                    <span class="icon">Favorites</span>
+                  <% end %>
+                </li>
+
               <li class="divider"></li>
 
               <% if @lists.empty? %>
               <% else %>
                 <li class="nav-header">Tiplists</li>
 
-                <% @lists.each do |list| %>
-                <% debugger %>
-                 <li>
-                  <%= link_to list_tips_path(list) do %>
-                    <i class='icon-list-ul'></i>
-                    <span class="icon"><%= list.title %></span>
+                <% if @user_lists %>
+                  <% @user_lists.each do |list| %>
+                  <li>
+                    <%= link_to list_path(list) do %>
+                      <i class='icon-list-ul'></i>
+                      <span class="icon"><%= list.title %></span>
+                    <% end %>
+                  </li>
                   <% end %>
-                </li>
                 <% end %>
 
                 <li class="divider"></li>
                 <% end %>
               <br/>
               <%= link_to new_list_path do %>
-              <button>
-                    <i class='icon-plus'></i>
-                    <span class="icon">Add tiplist</span>
-              </button>
+                <button>
+                  <i class='icon-plus'></i>
+                  <span class="icon">Add tiplist</span>
+                </button>
               <% end %>
 
 
@@ -101,10 +116,7 @@
 
 
               </div>
-              <div class="span9">
-              <% if notice %>
-                <p class="notice"><%= notice %></p>
-              <% end %>
+               <div class="span9">
                 <%= yield %>
               </div>
             </div>

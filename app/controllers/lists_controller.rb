@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
 
-  load_and_authorize_resource class: 'Citygate::User'
+  load_and_authorize_resource class: 'Citygate::User', only: [:new, :create]
 
   before_filter :get_list_by_id, except: [:index, :new, :create]
 
@@ -27,6 +27,7 @@ class ListsController < ApplicationController
   # POST /lists
   def create
     @list = List.new(params[:list])
+    @list.user_id = current_user.id
 
     if @list.save
       redirect_to @list, notice: 'List was successfully created.'
@@ -51,6 +52,10 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @list.destroy
     redirect_to :root
+  end
+
+  def follow
+    @list.followers << current_user
   end
 
   protected
