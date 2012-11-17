@@ -71,8 +71,9 @@
                 <li class="nav-header">Tiplists</li>
 
                 <% @lists.each do |list| %>
+                <% debugger %>
                  <li>
-                  <%= link_to tiplist_path(list) do %>
+                  <%= link_to list_tips_path(list) do %>
                     <i class='icon-list-ul'></i>
                     <span class="icon"><%= list.title %></span>
                   <% end %>
