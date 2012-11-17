@@ -66,7 +66,8 @@
 
               <li class="divider"></li>
 
-
+              <% if @lists.empty? %>
+              <% else %>
                 <li class="nav-header">Tiplists</li>
 
                 <% @lists.each do |list| %>
@@ -79,7 +80,7 @@
                 <% end %>
 
                 <li class="divider"></li>
-
+                <% end %>
               <br/>
               <%= link_to new_list_path do %>
               <button>
