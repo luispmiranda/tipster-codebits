@@ -52,6 +52,7 @@ class TipsController < ApplicationController
     redirect_to :root
   end
 
+
   protected
 
     def load_list

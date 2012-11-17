@@ -1,7 +1,7 @@
 class Favorite < ActiveRecord::Base
   
   #### Relations
-  has_one :user, :class_name => 'Citygate::User'
-  has_one :tip
+  belongs_to :user, :class_name => 'Citygate::User'
+  belongs_to :tip
 
 end

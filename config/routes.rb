@@ -10,4 +10,6 @@ Tipster::Application.routes.draw do
   end
 
   match '/profile' => 'users#profile'
+
+  match '/feed' => 'feeds#main'
 end
