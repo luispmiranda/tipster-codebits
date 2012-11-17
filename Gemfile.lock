@@ -85,6 +85,8 @@ GEM
       multipart-post (~> 1.1)
     font-awesome-rails (0.4.1)
       railties (~> 3.1)
+    google-webfonts (0.1.2)
+      actionpack (>= 3.0.0)
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.2.0)
@@ -215,6 +217,7 @@ DEPENDENCIES
   debugger
   execjs
   font-awesome-rails
+  google-webfonts
   jquery-rails
   less-rails
   rails (= 3.2.9)

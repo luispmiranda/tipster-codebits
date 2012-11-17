@@ -6,12 +6,14 @@ Tipster::Application.routes.draw do
   mount Citygate::Engine => '/'
 
   resources :lists do
-    resources :tips do
-      member do
-        post :favorite
-      end
-    end
+    resources :tips
 
+    member do
+      post :favorite
+    end
+  end
+
+  resources :users do
     member do
       post :follow
     end

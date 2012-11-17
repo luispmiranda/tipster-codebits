@@ -58,9 +58,11 @@ class ListsController < ApplicationController
     redirect_to :root
   end
 
-  def follow
-    @list.followers << current_user
+  def favorite
+    @list.favoriters << current_user
+    redirect_to favorites_path
   end
+
 
   protected
 

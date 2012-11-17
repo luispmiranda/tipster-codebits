@@ -1,1 +1,3 @@
-<%= render 'lists/table', lists: @follows %>
+<% @follows.each do |follow| %>
+  <%= follow.followed.email %>
+<% end %>
