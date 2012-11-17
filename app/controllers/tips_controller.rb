@@ -2,6 +2,7 @@ class TipsController < ApplicationController
 
   load_and_authorize_resource class: 'Citygate::User', only: [:new, :create]
 
+
   before_filter :load_list
 
   # GET /tips

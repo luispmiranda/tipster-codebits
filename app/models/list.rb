@@ -1,7 +1,7 @@
 class List < ActiveRecord::Base
   include PublicActivity::Model
-  include PublicActivity::StoreController
-  tracked :owner => proc { |controller, model| controller.current_user }
+  #include PublicActivity::StoreController
+  tracked# :owner => proc { |controller, model| controller.current_user }
 
   #### Relations
   belongs_to :user, :class_name => 'Citygate::User'

@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
     def load_user_tips
       if user_signed_in?
         @user_lists = current_user.lists.where('id NOT NULL') if user_signed_in?
-        #debugger
       end
     end
 
