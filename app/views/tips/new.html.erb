@@ -2,4 +2,11 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', list_tips_path %>
+<div class="row-fluid">
+  <div class="span12">
+      <%= link_to list_tips_path(@list) do %>
+        <i class="icon-arrow-left"></i>
+        <span class="icon">Back</span>
+      <% end %>
+  </div>
+</div>

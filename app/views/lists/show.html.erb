@@ -32,9 +32,9 @@
 </div>
 
 <% if @list.tips.empty? %>
-  <p>There are no tips yet. <%= link_to 'Why don\'t you add one?', new_list_tip_path(@list) %></p>
+  <p>There are no tips yet. <strong><%= link_to 'Why don\'t you add one?', new_list_tip_path(@list) %></strong></p>
 <% else %>
-  <%= render 'tips/table' %>
+  <%= render 'tips/table', :tips => @list.tips %>
 <% end %>
 
 <div class="row-fluid">
