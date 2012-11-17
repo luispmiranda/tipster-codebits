@@ -12,7 +12,6 @@ class ListsController < ApplicationController
   # GET /lists/1
   def show
     @list = List.find(params[:id])
-    @tips = Tip.by_list(@list)
   end
 
   # GET /lists/new
@@ -23,7 +22,6 @@ class ListsController < ApplicationController
   # GET /lists/1/edit
   def edit
     @list = List.find(params[:id])
-    @tips = Tip.by_list(@list)
   end
 
   # POST /lists
