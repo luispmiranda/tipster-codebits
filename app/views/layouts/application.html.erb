@@ -48,14 +48,53 @@
     </header>
 
     <div class="container">
-      <div id="content" class="span12">
-         <%= yield %>
-      </div>
-    </div><!--/row-->
+          <div class="row-fluid">
 
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
+            <div id="sidebar" class="span3">
+
+
+              <ul class="nav nav-list">
+                <li class="nav-header">tipster</li>
+                <li>
+                  <%= link_to '/path1' do %>
+                    <%= image_tag 'glyphicons/link.png', :class => 'icon' %>
+                    <span class="icon">Feed</span>
+                  <% end %>
+                </li>
+
+              </ul>
+
+              <br/>
+
+              <ul class="nav nav-list">
+                <li class="nav-header">Tiplists</li>
+                <%# @tiplists.each do |tiplist| %>
+                <li><%#= link_to tiplist.title, tiplist_path(tiplist) %></li>
+                <%# end %>
+                <li>
+                  <%= link_to 'users/auth/twitter' do %>
+                    <%= image_tag 'glyphicons/link.png', :class => 'icon' %>
+                    <span class="icon">Bash pro</span>
+                  <% end %>
+                </li>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
+              </ul>
+            </div><!--/.well -->
+
+
+
+
+
+
+
+
+          <div id="main-content" class="span9">
+             <%= yield %>
+          </div>
+        </div><!--/row-->
+
+
 
     </div> <!-- /container -->
 

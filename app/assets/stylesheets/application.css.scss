@@ -14,15 +14,36 @@
 
 body {
   position: relative;
-  padding-top: 40px
+  padding-top: 40px;
+  height: 100%;
+  #sidebar {
+
+  background: white;
+  padding: 20px 0px 20px 0px;
+  width: 240px;
+  bottom:0px;
+  display:block;
+  min-height: 100%;
+
+  height: 100%;
+  }
+
+
 }
 
 .well {
 	margin-top: 20px;
 }
 
-#content {
-	padding: 20px 0;
+#main-content {
+
+
+  background: white;
+  padding: 0px 5px 0px 0px;
+	// div {
+	// 	margin: 0 20px;
+	// }
+  width: 660px;
 
 	.field {
 		padding: 10px 0;
@@ -44,11 +65,13 @@ body {
 	img.icon {
 		height: 1em;
 	}
+  img.tinyicon {
+    height: 0.5em;
+  }
 	span.icon {
 		font-family: Arial, sans-serif;
 		font-weight: bold;
 	}
-}
 
 .tipster-align-right {
 	text-align: right;
