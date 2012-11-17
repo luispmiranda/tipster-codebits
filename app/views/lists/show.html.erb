@@ -47,21 +47,22 @@
   <div class=" fix-margins">
 <br/>
 <hr/>
-<% if @list.tips.empty? %>
-  <p>There are no tips yet. <strong><%= link_to 'Why don\'t you add one?', new_list_tip_path(@list) %></strong></p>
-<% else %>
-  <% @list.tips.each do |tips| %>
-  <div class="tip-container">
-    <div class="tip-title">
-      <i class='icon-tasks'></i><%= tips.title%>
+  <% if @list.tips.empty? %>
+    <p>There are no tips yet. <strong><%= link_to 'Why don\'t you add one?', new_list_tip_path(@list) %></strong></p>
+  <% else %>
+    <% @list.tips.each do |tips| %>
+    <div class="tip-container">
+      <div class="tip-title">
+        <i class='icon-tasks'></i><%= tips.title%>
+      </div>
+      <div class="row-fluid">
+        <div class="span12">
+          <%= "<div class=\"#{@list.category.name.downcase}\">".html_safe %>
+            <pre><code><%= tips.content %></code></pre>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row-fluid">
-  <div class="span12">
-    <pre><code><%= tips.content %></code></pre>
-  </div>
-</div>
-
-</div>
   <% end %>
 </div>
 <% end %>
