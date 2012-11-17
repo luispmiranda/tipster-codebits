@@ -54,19 +54,35 @@
 
 
               <ul class="nav nav-list">
-                <li class="nav-header">Profile</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
+                <li class="nav-header">tipster</li>
+                <li>
+                  <%= link_to '/path1' do %>
+                    <%= image_tag 'glyphicons/link.png', :class => 'icon' %>
+                    <span class="icon">Feed</span>
+                  <% end %>
+                </li>
+
               </ul>
-              <hr/>
+
+              <br/>
+
               <ul class="nav nav-list">
                 <li class="nav-header">Tiplists</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
+                <%# @tiplists.each do |tiplist| %>
+                <li><%#= link_to tiplist.title, tiplist_path(tiplist) %></li>
+                <%# end %>
+                <li>
+                  <%= link_to 'users/auth/twitter' do %>
+                    <%= image_tag 'glyphicons/link.png', :class => 'icon' %>
+                    <span class="icon">Bash pro</span>
+                  <% end %>
+                </li>
                 <li><%= link_to "Link2", "/path2"  %></li>
                 <li><%= link_to "Link3", "/path3"  %></li>
               </ul>
             </div><!--/.well -->
+
+
 
 
 
