@@ -1,7 +1,7 @@
 Tipster::Application.routes.draw do
 
   # root :to => 'lists#index'
-  root :to => 'home#index'
+  root :to => 'lists#index'
 
   mount Citygate::Engine => '/'
 
