@@ -2,45 +2,50 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
-<h4><%= @list.title %></h4>
+
+<div class="row">
+    <div class="span5">
+      <h4><%= @list.title %></h4><span><%= @list.category.name %></span>
+    </div>
+
+    <div class="span2">
+             <ul>
+              <li>
+              <%= link_to edit_list_path do %>
+                    <i class='icon-plus'></i>
+                    <span class="icon">Add tip</span>
+              <% end %>
+              </li>
+            </ul>
+    </div>
+
+    <div class="span2">
+              <ul>
+              <li>
+              <%= link_to edit_list_path do %>
+                    <i class='icon-edit'></i>
+                    <span class="icon">Edit</span>
+              <% end %>
+              </li>
+            </ul>
+    </div>
+</div>
+
+<br/>
+<br/>
 
 
 
-<%= link_to edit_list_path(@list) do %>
-  <button class="btn">
-    <%= image_tag 'glyphicons/edit.png', :class => 'icon' %>
-    Edit
-  </button>
-<% end %>
-
-<h2>Tips</h2>
-<table class="table">
-  <tr>
-    <th>Content</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<hr/>
 
 <% @list.tips.each do |tip| %>
-  <tr>
-    <td><%= tip.content %></td>
-    <td><%= tip.title %></td>
-    <td><%= link_to image_tag('glyphicons/expand.png', :class => 'icon', 'style' => 'display:inline'), list_tip_path(tip) %></td>
-    <td><%= link_to 'Edit', edit_list_tip_path(tip) %></td>
-    <td><%= link_to 'Destroy', list_tip_path(tip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div class="row">
+  <h3>Title</h3>
+  <h3>Content</h3
+</div>
 <% end %>
-</table>
+
+
 
 <br />
 
-<div class="row-fluid">
-  <div class="span2">
-    <%= button_with_icon 'Back', lists_path, 'glyphicons/circle_arrow_left.png' %>
-  </div>
-  <div class="offset8 span2 tipster-align-right">
-    <%= button_with_icon 'New Tip', new_list_tip_path(@list), 'glyphicons/circle_plus.png' %>
-  </div>
-</div>
