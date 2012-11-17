@@ -1,25 +1,18 @@
-<h1>Listing tips</h1>
+<div class="row-fluid">
+  <div class="span8">
+    <h1>Listing tips</h1>
+  </div>
 
-<table>
-  <tr>
-    <th>Content</th>
-    <th>Title</th>
-      <th></th>
-      <th></th>
-      <th></th>
-  </tr>
+  <div class="span4">
+    <div class="btn-group pull-right">
+      <%= link_to new_list_tip_path(@list) do %>
+        <button class="btn">
+          <i class="icon-plus"></i>
+          <span class="icon">New Tip</span>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<% @tips.each do |tip| %>
-  <tr>
-    <td><%= tip.content %></td>
-    <td><%= tip.title %></td>
-    <td><%= link_to 'Show', list_tip_path(@list,tip) %></td>
-    <td><%= link_to 'Edit', edit_list_tip_path(@list,tip) %></td>
-    <td><%= link_to 'Destroy', list_tip_path(@list,tip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Tip', new_list_tip_path(@list) %>
+<%= render 'lists/table', :list => @list %>

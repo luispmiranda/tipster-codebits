@@ -1,23 +1,29 @@
-<h1>Listing lists</h1>
+<div class="row-fluid">
+  <div class="span8">
+    <h1>Listing lists</h1>
+  </div>
 
-<table>
-  <tr>
+  <div class="span4">
+    <div class="btn-group pull-right">
+      <%= link_to new_list_path do %>
+        <button class="btn">
+          <i class="icon-plus"></i>
+          <span class="icon">New List</span>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
     <th>Title</th>
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+  </thead>
 
-<% @lists.each do |list| %>
-  <tr>
-    <td><%= list.title %></td>
-    <td><%= link_to 'Show', list %></td>
-    <td><%= link_to 'Edit', edit_list_path(list) %></td>
-    <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @lists.each do |list| %>
+    <%= render 'row', :list => list %>
+  <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New List', new_list_path %>
