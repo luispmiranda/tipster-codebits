@@ -8,6 +8,7 @@ gem 'rails', '3.2.9'
 gem 'sqlite3'
 gem 'citygate', git: 'git://github.com/zamith/citygate.git'
 gem "rails_engine_decorators"
+gem 'public_activity'
 
 group :development do
   gem 'therubyracer'

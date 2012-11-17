@@ -1,3 +1,6 @@
 <%# @followed_tips.each do |tip| %>
-  <%= render 'tips/table', tips: @followed_tips %>
+  <%#= render 'tips/table', tips: @followed_tips %>
 <%# end %>
+<% for activity in @activities %>
+  <%= render_activity(activity) %>
+<% end %>

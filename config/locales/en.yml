@@ -3,3 +3,12 @@
 
 en:
   hello: "Hello world"
+  activity:
+    list:
+      create: 'List created'
+      update: 'List updated'
+      destroy: 'List deleted'
+    tip:
+      create: 'Tip added'
+      update: 'Tip updated'
+      destroy: 'Tip deleted'
