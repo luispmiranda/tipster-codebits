@@ -2,8 +2,6 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
-
-<<<<<<< HEAD
 <div class="row">
     <div class="span5">
       <h4><%= @list.title %></h4><span><%= @list.category.name %></span>
@@ -32,14 +30,21 @@
     </div>
 </div>
 
-<p><%= @list.desc %></p>
 
 <br/>
 <br/>
+
+<p><%= @list.desc %></p>
+
 
 
 
 <hr/>
+
+<% if @list.tips.empty? %>
+  <p> There are no tips yet. <%= link_to "Why don't you add one?", edit_list_path %></p>
+
+<% end %>
 
 <% @list.tips.each do |tip| %>
 <div class="row">
