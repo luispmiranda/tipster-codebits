@@ -24,5 +24,13 @@
 <p id="notice"><%= notice %></p>
 
 
-<%#= link_to 'Edit', edit_list_tip_path(@list,@tip) %> |
-<%= link_to 'Back', list_tips_path(@list) %>
+<%#= link_to 'Edit', edit_list_tip_path(@list,@tip) %>
+<%#= link_to 'Back', list_tips_path(@list) %>
+<div class="row-fluid">
+  <div class="span12">
+      <%= link_to list_tips_path(@list) do %>
+        <i class="icon-arrow-left"></i>
+        <span class="icon">Back</span>
+      <% end %>
+  </div>
+</div>
