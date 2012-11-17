@@ -1,44 +1,38 @@
-<h4><%= @list.title %></h4>
+<div class="row-fluid">
+  <div class="span8">
+    <h3><%= @list.title %></h3>
+    <span class="label label-inverse"><%= @list.category.name %></span>
+  </div>
 
-<p><%= @list.desc %></p>
-
-
-
-<%= link_to edit_list_path(@list) do %>
-  <button class="btn">
-    <%= image_tag 'glyphicons/edit.png', :class => 'icon' %>
-    Edit
-  </button>
-<% end %>
-
-<h2>Tips</h2>
-<table class="table">
-  <tr>
-    <th>Content</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @list.tips.each do |tip| %>
-  <tr>
-    <td><%= tip.content %></td>
-    <td><%= tip.title %></td>
-    <td><%= link_to image_tag('glyphicons/expand.png', :class => 'icon', 'style' => 'display:inline'), list_tip_path(tip) %></td>
-    <td><%= link_to 'Edit', edit_list_tip_path(tip) %></td>
-    <td><%= link_to 'Destroy', list_tip_path(tip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+  <div class="span4">
+    <div class="btn-group">
+      <%= link_to new_list_tip_path(@list) do %>
+        <button class="btn">
+          <i class="icon-plus"></i>
+          <span class="icon">Add Tip</span>
+        </button>
+      <% end %>
+      <%= link_to edit_list_path do %>
+        <button class="btn">
+          <i class="icon-edit"></i>
+          <span class="icon">Edit</span>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <div class="row-fluid">
   <div class="span2">
-    <%= button_with_icon 'Back', lists_path, 'glyphicons/circle_arrow_left.png' %>
+    
   </div>
-  <div class="offset8 span2 tipster-align-right">
-    <%= button_with_icon 'New Tip', new_list_tip_path(@list), 'glyphicons/circle_plus.png' %>
+  <div class="span10">
+    <p><%= @list.desc %><p>
   </div>
 </div>
+
+<% if @list.tips.empty? %>
+  <p>There are no tips yet. <%= link_to 'Why don\'t you add one?', new_list_tip_path(@list) %></p>
+<% else %>
+  <%= render 'table' %>
+<% end %>
