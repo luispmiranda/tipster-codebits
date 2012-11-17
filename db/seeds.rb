@@ -14,5 +14,5 @@ end
 
 langs = File.open 'db/languages.txt'
 langs.lines.each do |lang|
-  Category.find_or_create_by_name lang
+  Category.find_or_create_by_name(lang.chomp)
 end

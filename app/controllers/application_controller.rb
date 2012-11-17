@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     if user_signed_in?
       flash[:error] = "Please don't try to go there. Stuff would break :("
+        Rails.logger.debug "Access denied on #{exception.action} #{exception.subject.inspect}"
       redirect_to profile_path
     else
       flash[:notice] = 'Please register first!'

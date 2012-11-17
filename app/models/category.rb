@@ -4,6 +4,6 @@ class Category < ActiveRecord::Base
   has_many :lists
 
   #### Accessors
-  attr_accessor :name
+  attr_accessible :name
 
 end
