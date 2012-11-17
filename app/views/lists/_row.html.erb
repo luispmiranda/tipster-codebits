@@ -1,9 +1,11 @@
 <tr>
   <td><%= link_to list.title, list %></td>
   <td>
+    <span class="label label-inverse"><%= list.category.name %></span>
     <%= link_to list do %>
       <i class="icon-eye-open"></i>
     <% end %>
+
   </td>
   <% if can?(:manage, list) %>
     <td>

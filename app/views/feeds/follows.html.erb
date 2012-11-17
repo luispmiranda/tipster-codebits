@@ -1,4 +1,4 @@
-
+<h3>Following</h3>
 
 <% if @follows.empty? %>
 
@@ -7,7 +7,8 @@ This user still don't follows anyone
 <% else %>
 
 <% @follows.each do |follow| %>
-  <%= follow.followed.email %>
+  <i class="icon-caret-right"></i>
+  <%= link_to follow.followed, follow.followed.first_name %>
 <% end %>
 
 <% end %>
