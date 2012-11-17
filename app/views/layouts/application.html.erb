@@ -66,14 +66,20 @@
                 <%# @tiplists.each do |tiplist| %>
                 <li><%#= link_to tiplist.title, tiplist_path(tiplist) %></li>
                 <%# end %>
+
                 <li>
-
-
-                    <span class="icon">Bash pro</span>
-
+                  <%= link_to '/path1' do %>
+                    <i class='icon-list-ul'></i>
+                    <span class="icon">ruby for pros</span>
+                  <% end %>
                 </li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
+
+                <li>
+                  <%= link_to '/path1' do %>
+                    <i class='icon-list-ul'></i>
+                    <span class="icon">1337 bash</span>
+                  <% end %>
+                </li>
 
                 <li class="divider"></li>
 
