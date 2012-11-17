@@ -7,7 +7,7 @@ class FeedsController < ApplicationController
   end
 
   def follows
-    @follows = current_user.followeds
+    @follows = current_user.follows
   end
 
   def favorites

@@ -54,11 +54,6 @@ class TipsController < ApplicationController
     redirect_to :root
   end
 
-  def favorite
-    @tip = Tip.find(params[:id])
-    @tip.favoriters << current_user
-  end
-
 
   protected
 

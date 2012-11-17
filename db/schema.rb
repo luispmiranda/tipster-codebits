@@ -76,16 +76,16 @@ ActiveRecord::Schema.define(:version => 20121117033514) do
 
   create_table "favorites", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "tip_id"
+    t.integer  "list_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "follows", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "list_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "followed_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "lists", :force => true do |t|

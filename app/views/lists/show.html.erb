@@ -24,10 +24,10 @@
 
   <div class="span2">
     <div class="btn-group pull-right">
-      <%= link_to follow_list_path(@list) do %>
+      <%= link_to favorite_list_path(@list), :method => :post do %>
         <button class="btn">
           <i class="icon-pushpin"></i>
-          <span class="icon">Follow</span>
+          <span class="icon">Favorite</span>
         </button>
       <% end %>
     </div>
