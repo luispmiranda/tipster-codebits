@@ -1,7 +1,7 @@
 class Follow < ActiveRecord::Base
   
   #### Relations
-  has_one :user, :class_name => 'Citygate::User'
-  has_one :list
+  belongs_to :user, :class_name => 'Citygate::User'
+  belongs_to :list
 
 end

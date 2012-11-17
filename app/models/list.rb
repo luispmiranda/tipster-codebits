@@ -7,7 +7,7 @@ class List < ActiveRecord::Base
 
 
   has_many :follows
-  has_many :followers, :through => :follows, :class_name => 'Citygate::User'
+  has_many :followers, :through => :follows, :source => :user, :class_name => 'Citygate::User'
 
 
   attr_accessible :category_id, :title, :desc
