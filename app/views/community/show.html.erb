@@ -1,13 +1,17 @@
 <h3>Community</h3>
 
 
-
 <% @users.each do |user| %>
+
   <div class="tip-container">
     <div class="tip-title">
-      <i class='icon-caret-down'></i><%= user.first_name%>
+    <i class='icon-caret-right'></i><%= user.first_name%>
     </div>
+    <i class='icon-eye-open'></i><%= link_to "Follow", follow_user_path(user),  method: :post  %>
+    <br/>
+    <i class='icon-info-sign'></i><%= link_to "Open profile", user_path(user.id) %>
 </div>
+<hr/>
 <% end %>
 
-</div>
+

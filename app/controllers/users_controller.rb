@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = Citygate::User.find(params[:id])
+
   end
 
   def follow

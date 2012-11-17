@@ -1,2 +1,12 @@
-<%= @user.full_name %>
-<%= link_to 'Follow', follow_user_path(@user), method: :post %>
+<h3><%= @user.full_name %>'s profile</h3>
+<i class='icon-eye-open'></i><%= link_to 'Follow', follow_user_path(@user), method: :post %>
+
+<hr/>
+
+<h3><%= @user.full_name %>'s tiplists</h3>
+
+<% @lists.each do |list| %>
+  <i class='icon-reorder'></i><%= link_to list.title, list %>
+<% end %>
+
+
