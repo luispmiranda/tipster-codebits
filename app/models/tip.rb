@@ -12,4 +12,5 @@ class Tip < ActiveRecord::Base
 
   #### Scopes
   scope :by_list, lambda { |list| where list_id: list.id }
+  scope :by_follower, lambda { |user| joins(:list => :follows).where("follows.user_id == #{user.id}").order('tips.updated_at ASC').limit(10) }
 end
