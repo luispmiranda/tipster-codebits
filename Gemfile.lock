@@ -76,6 +76,8 @@ GEM
     faraday (0.8.4)
       multipart-post (~> 1.1)
     hashie (1.2.0)
+    highlight_js-rails (7.1.0)
+      rails (>= 3.1.1)
     hike (1.2.1)
     httpauth (0.2.0)
     i18n (0.6.1)
@@ -201,6 +203,7 @@ DEPENDENCIES
   citygate!
   coffee-rails (~> 3.2.1)
   execjs
+  highlight_js-rails
   jquery-rails
   less-rails
   rails (= 3.2.9)
