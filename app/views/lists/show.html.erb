@@ -1,59 +1,38 @@
-<% if notice %>
-  <p id="notice"><%= notice %></p>
-<% end %>
+<div class="row-fluid">
+  <div class="span8">
+    <h3><%= @list.title %></h3>
+    <span class="label label-inverse"><%= @list.category.name %></span>
+  </div>
 
-<div class="row">
-    <div class="span5">
-      <h4><%= @list.title %></h4><span><%= @list.category.name %></span>
+  <div class="span4">
+    <div class="btn-group">
+      <%= link_to new_list_tip_path(@list) do %>
+        <button class="btn">
+          <i class="icon-plus"></i>
+          <span class="icon">Add Tip</span>
+        </button>
+      <% end %>
+      <%= link_to edit_list_path do %>
+        <button class="btn">
+          <i class="icon-edit"></i>
+          <span class="icon">Edit</span>
+        </button>
+      <% end %>
     </div>
-
-    <div class="span2">
-             <ul>
-              <li>
-              <%= link_to edit_list_path do %>
-                    <i class='icon-plus'></i>
-                    <span class="icon">Add tip</span>
-              <% end %>
-              </li>
-            </ul>
-    </div>
-
-    <div class="span2">
-              <ul>
-              <li>
-              <%= link_to edit_list_path do %>
-                    <i class='icon-edit'></i>
-                    <span class="icon">Edit</span>
-              <% end %>
-              </li>
-            </ul>
-    </div>
+  </div>
 </div>
 
-
-<br/>
-<br/>
-
-<p><%= @list.desc %></p>
-
-
-
-
-<hr/>
+<div class="row-fluid">
+  <div class="span2">
+    
+  </div>
+  <div class="span10">
+    <p><%= @list.desc %><p>
+  </div>
+</div>
 
 <% if @list.tips.empty? %>
-  <p> There are no tips yet. <%= link_to "Why don't you add one?", edit_list_path %></p>
-
+  <p>There are no tips yet. <%= link_to 'Why don\'t you add one?', new_list_tip_path(@list) %></p>
+<% else %>
+  <%= render 'table' %>
 <% end %>
-
-<% @list.tips.each do |tip| %>
-<div class="row">
-  <h3>Title</h3>
-  <h3>Content</h3
-</div>
-<% end %>
-
-
-
-<br />
-
