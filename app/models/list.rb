@@ -1,11 +1,12 @@
 class List < ActiveRecord::Base
-
+  
   #### Relations
-  belongs_to :user, class_name: 'Citygate::User'
-  belongs_to :category
+  belongs_to :user, :class_name => 'Citygate::User'
   has_many :tips
-  has_many :follows
+  belongs_to :category
 
-  #### Accessors
-  attr_accessible :title
+
+  has_many :follows
+  has_many :followers, :through => :follows, :class_name => 'Citygate::User'
+
 end

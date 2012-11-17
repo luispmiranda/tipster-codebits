@@ -4,6 +4,9 @@ class Tip < ActiveRecord::Base
   belongs_to :list
   has_many :favorites
 
+  has_many :favorites
+  has_many :favoriters, :through => :follows, :class_name => 'Citygate::User'
+
   #### Accessors
   attr_accessible :content, :title
 
