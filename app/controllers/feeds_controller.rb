@@ -11,6 +11,7 @@ class FeedsController < ApplicationController
   end
 
   def favorites
+    @user = current_user
     @favorites = current_user.favorited
   end
 
