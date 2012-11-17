@@ -13,13 +13,13 @@
   <tr>
     <td><%= tip.content %></td>
     <td><%= tip.title %></td>
-    <td><%= link_to 'Show', tip %></td>
-    <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
-    <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', list_tip_path(@list,tip) %></td>
+    <td><%= link_to 'Edit', edit_list_tip_path(@list,tip) %></td>
+    <td><%= link_to 'Destroy', list_tip_path(@list,tip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Tip', new_tip_path %>
+<%= link_to 'New Tip', new_list_tip_path(@list) %>

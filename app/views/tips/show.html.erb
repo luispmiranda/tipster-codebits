@@ -1,15 +1,13 @@
+<h1><%= @tip.title %></h1>
+
+<div class="row">
+  <div class="span12">
+    <pre><code><%= @tip.content %></code></pre>
+  </div>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Content:</b>
-  <%= @tip.content %>
-</p>
 
-<p>
-  <b>Title:</b>
-  <%= @tip.title %>
-</p>
-
-
-<%= link_to 'Edit', edit_tip_path(@tip) %> |
-<%= link_to 'Back', tips_path %>
+<%= link_to 'Edit', edit_list_tip_path(@list,@tip) %> |
+<%= link_to 'Back', list_tips_path(@list) %>

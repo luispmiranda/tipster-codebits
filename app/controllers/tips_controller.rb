@@ -1,29 +1,29 @@
 class TipsController < ApplicationController
 
+  before_filter :load_list
+
   # GET /tips
-  #def index
-  #  @tips = Tip.by_list(@list)
-  #end
+  def index
+    @tips = @list.tips
+  end
 
   # GET /tips/1
-  #def show
-  #  @tip = Tip.find(params[:id])
-  #end
+  def show
+    @tip = Tip.find(params[:id])
+  end
 
   # GET /tips/new
   def new
-    @list = List.find(params[:list_id])
     @tip = @list.tips.build
   end
 
   # GET /tips/1/edit
-  #def edit
-  #  @tip = Tip.find(params[:id])
-  #end
+  def edit
+    @tip = Tip.find(params[:id])
+  end
 
   # POST /tips
   def create
-    @list = List.find(params[:list_id])
     @tip = Tip.new(params[:tip])
 
     if @tip.save
@@ -51,4 +51,10 @@ class TipsController < ApplicationController
     @tip.destroy
     redirect_to :root
   end
+
+  protected
+
+    def load_list
+      @list = List.find(params[:list_id])
+    end
 end
