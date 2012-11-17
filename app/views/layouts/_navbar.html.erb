@@ -5,9 +5,24 @@
 
 
       <div class="container nav-collapse">
+
         <ul class="nav pull-right">
+
+
+
+
+
           <li>
             <div class="btn-group">
+              <% if user_signed_in? %>
+                  <%= link_to current_user do %>
+                  <button class="btn">
+                    <i class="icon-tasks"></i>
+                    <%= current_user.first_name %>
+                  </button>
+                  <% end %>
+                  <% end %>
+
               <% if user_signed_in? %>
                 <%= link_to citygate.destroy_user_session_path, :method => :delete do %>
                   <button class="btn">
