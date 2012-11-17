@@ -34,5 +34,14 @@
 <% if @list.tips.empty? %>
   <p>There are no tips yet. <%= link_to 'Why don\'t you add one?', new_list_tip_path(@list) %></p>
 <% else %>
-  <%= render 'table' %>
+  <%= render 'tips/table' %>
 <% end %>
+
+<div class="row-fluid">
+  <div class="span12">
+      <%= link_to lists_path do %>
+        <i class="icon-arrow-left"></i>
+        <span class="icon">Back</span>
+      <% end %>
+  </div>
+</div>
