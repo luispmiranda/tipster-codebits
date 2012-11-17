@@ -2,5 +2,8 @@
   <%#= render 'tips/table', tips: @followed_tips %>
 <%# end %>
 <% for activity in @activities %>
-  <%= render_activity(activity) %>
+  <div>
+    <%= activity.text %>
+    <%= time_ago_in_words(activity.created_at) %> ago
+  </div>
 <% end %>
