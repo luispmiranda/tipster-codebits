@@ -1,11 +1,11 @@
 <tr>
   <td><%= list.title %></td>
+  <td>
+    <%= link_to list do %>
+      <i class="icon-eye-open"></i>
+    <% end %>
+  </td>
   <% if can?(:manage, list) %>
-    <td>
-      <%= link_to list do %>
-        <i class="icon-eye-open"></i>
-      <% end %>
-    </td>
     <td>
       <%= link_to edit_list_path(list) do %>
         <i class="icon-edit"></i>
