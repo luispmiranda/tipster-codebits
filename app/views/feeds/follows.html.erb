@@ -1,3 +1,13 @@
+
+
+<% if @follows.empty? %>
+
+This user still don't follows anyone
+
+<% else %>
+
 <% @follows.each do |follow| %>
   <%= follow.followed.email %>
+<% end %>
+
 <% end %>
