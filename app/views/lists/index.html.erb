@@ -15,15 +15,4 @@
   </div>
 </div>
 
-<table class="table">
-  <thead>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </thead>
-
-  <% @lists.each do |list| %>
-    <%= render 'row', :list => list %>
-  <% end %>
-</table>
+<%= render 'table' %>

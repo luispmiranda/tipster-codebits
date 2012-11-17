@@ -1,14 +1,12 @@
 <table class="table">
   <thead>
     <th>Title</th>
-    <th>Content</th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </thead>
 
-  <% @list.tips.each do |tip| %>
-    <%= render 'tips/row', tip: tip %>
+  <% @lists.each do |list| %>
+    <%= render 'row', :list => list %>
   <% end %>
-
 </table>

@@ -1,6 +1,6 @@
 <div class="row-fluid">
   <div class="span8">
-    <h1>Listing tips</h1>
+    <h1><%= @list.title %></h1>
   </div>
 
   <div class="span4">
@@ -15,4 +15,19 @@
   </div>
 </div>
 
-<%= render 'lists/table', :list => @list %>
+<div class="row-fluid">
+  <div class="span12">
+    <h2>Tips</h2>
+  </div>
+</div>
+
+<%= render 'table' %>
+
+<div class="row-fluid">
+  <div class="span12">
+      <%= link_to @list do %>
+        <i class="icon-arrow-left"></i>
+        <span class="icon">Back</span>
+      <% end %>
+  </div>
+</div>
