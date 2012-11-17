@@ -1,1 +1,3 @@
-<% render 'tips/table', collection: @followed_tips %>
+<%# @followed_tips.each do |tip| %>
+  <%= render 'tips/table', tips: @followed_tips %>
+<%# end %>
