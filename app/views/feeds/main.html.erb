@@ -6,6 +6,8 @@
     <div class="span12">
       <div class="well">
         <%= render_activity(activity, :layout => :activity) %>
+        <%#= activity.text.html_safe %>
+        <%#= time_ago_in_words(activity.created_at) %> ago
       </div>
     </div>
   </div>

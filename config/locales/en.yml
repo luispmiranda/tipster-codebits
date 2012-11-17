@@ -5,10 +5,10 @@ en:
   hello: "Hello world"
   activity:
     list:
-      create: 'List created'
-      update: 'List updated'
-      destroy: 'List deleted'
+      create:  "%{author} created the list '%{title}'"
+      update:  "%{author} updated the list '%{title}'"
+      destroy: "List deleted"
     tip:
-      create: 'Tip added'
-      update: 'Tip updated'
-      destroy: 'Tip deleted'
+      create:  "%{author} added '%{title}' to '%{list}'"
+      update:  "%{author} updated '%{title}' at '%{list}'"
+      destroy: "%{author} deleted '%{title}' at '%{list}'"
