@@ -54,6 +54,10 @@ class ListsController < ApplicationController
     redirect_to :root
   end
 
+  def follow
+    @list.followers << current_user
+  end
+
   protected
 
     def get_list_by_id
