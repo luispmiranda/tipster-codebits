@@ -1,6 +1,21 @@
-<h1><%= @tip.title %></h1>
+<div class="row-fluid">
+  <div class="span8">
+    <h1><%= @tip.title %></h1>
+  </div>
 
-<div class="row">
+  <div class="span4">
+    <div class="btn-group pull-right">
+      <%= link_to edit_list_tip_path(@list,@tip) do %>
+        <button class="btn">
+          <i class="icon-edit"></i>
+          <span class="icon">Edit</span>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row-fluid">
   <div class="span12">
     <pre><code><%= @tip.content %></code></pre>
   </div>
@@ -9,5 +24,5 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= link_to 'Edit', edit_list_tip_path(@list,@tip) %> |
+<%#= link_to 'Edit', edit_list_tip_path(@list,@tip) %> |
 <%= link_to 'Back', list_tips_path(@list) %>

@@ -1,19 +1,25 @@
 <tr>
   <td><%= tip.title %></td>
   <td><%= tip.content %></td>
-  <td>
-    <%= link_to list_tip_path(tip.list) do %>
-      <i class="icon-eye-open"></i>
-    <% end %>
-  </td>
-  <td>
-    <%= link_to edit_list_tip_path(tip.list) do %>
-      <i class="icon-edit"></i>
-    <% end %>
-  </td>
-  <td>
-    <%= link_to list_tip_path(tip.list), :method => :delete, :data => { :confirm => 'Are you sure?' } do %>
-      <i class="icon-remove"></i>
-    <% end %>
-  </td>
+  <% if can?(:manage, tip.list) %>
+    <td>
+      <%= link_to list_tip_path(tip.list) do %>
+        <i class="icon-eye-open"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to edit_list_tip_path(tip.list) do %>
+        <i class="icon-edit"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to list_tip_path(tip.list), :method => :delete, :data => { :confirm => 'Are you sure?' } do %>
+        <i class="icon-remove"></i>
+      <% end %>
+    </td>
+  <% else %>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  <% end %>
 </tr>
