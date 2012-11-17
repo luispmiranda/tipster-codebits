@@ -10,5 +10,5 @@ class List < ActiveRecord::Base
   has_many :followers, :through => :follows, :class_name => 'Citygate::User'
 
 
-  attr_accessible :category_id, :title
+  attr_accessible :category_id, :title, :desc
 end
