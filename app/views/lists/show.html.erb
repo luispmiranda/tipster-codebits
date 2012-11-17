@@ -1,21 +1,33 @@
 <div class="row-fluid">
-  <div class="span8">
-    <h3><%= @list.title %></h3>
-    <span class="label label-inverse"><%= @list.category.name %></span>
+  <div class="span6">
+    <h1><%= @list.title %></h1>
   </div>
 
   <div class="span4">
+    <% if can? :manage, @list %>
+      <div class="btn-group pull-right">
+        <%= link_to new_list_tip_path(@list) do %>
+          <button class="btn">
+            <i class="icon-plus"></i>
+            <span class="icon">Add Tip</span>
+          </button>
+        <% end %>
+        <%= link_to edit_list_path do %>
+          <button class="btn">
+            <i class="icon-edit"></i>
+            <span class="icon">Edit</span>
+          </button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="span2">
     <div class="btn-group pull-right">
-      <%= link_to new_list_tip_path(@list) do %>
+      <%= link_to follow_list_path(@list) do %>
         <button class="btn">
-          <i class="icon-plus"></i>
-          <span class="icon">Add Tip</span>
-        </button>
-      <% end %>
-      <%= link_to edit_list_path do %>
-        <button class="btn">
-          <i class="icon-edit"></i>
-          <span class="icon">Edit</span>
+          <i class="icon-pushpin"></i>
+          <span class="icon">Follow</span>
         </button>
       <% end %>
     </div>
@@ -24,7 +36,7 @@
 
 <div class="row-fluid">
   <div class="span2">
-    
+    <span class="label label-inverse"><%= @list.category.name %></span>
   </div>
   <div class="span10">
     <p><%= @list.desc %><p>

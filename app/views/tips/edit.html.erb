@@ -2,5 +2,22 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @tip %> |
-<%= link_to 'Back', tips_path %>
+<div class="row-fluid">
+  <div class="span6">
+      <%= link_to list_tips_path(@list) do %>
+        <i class="icon-arrow-left"></i>
+        <span class="icon">Back</span>
+      <% end %>
+  </div>
+
+  <div class="span6">
+    <div class="pull-right">
+      <%= link_to list_tips_path(@list) do %>
+        <button class="btn">
+          <i class="icon-eye-open"></i>
+          <span class="icon">Show</span>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>
