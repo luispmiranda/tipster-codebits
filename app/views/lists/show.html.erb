@@ -1,9 +1,9 @@
 <div class="row-fluid">
   <div class="span6">
-    <h1><%= @list.title %></h1>
+    <h3><%= @list.title %></h3>
   </div>
 
-  <div class="span4">
+  <div class="span3 down">
     <% if can? :manage, @list %>
       <div class="btn-group pull-right">
         <%= link_to new_list_tip_path(@list) do %>
@@ -22,7 +22,7 @@
     <% end %>
   </div>
 
-  <div class="span2">
+  <div class="span2 down">
     <div class="btn-group pull-right">
       <%= link_to favorite_list_path(@list), :method => :post do %>
         <button class="btn">
@@ -43,11 +43,30 @@
   </div>
 </div>
 
+<div class="row-fluid">
+  <div class=" fix-margins">
+<br/>
+<hr/>
 <% if @list.tips.empty? %>
   <p>There are no tips yet. <strong><%= link_to 'Why don\'t you add one?', new_list_tip_path(@list) %></strong></p>
 <% else %>
-  <%= render 'tips/table', :tips => @list.tips %>
+  <% @list.tips.each do |tips| %>
+  <div class="tip-container">
+    <div class="tip-title">
+      <i class='icon-tasks'></i><%= tips.title%>
+    </div>
+    <div class="row-fluid">
+  <div class="span12">
+    <pre><code><%= tips.content %></code></pre>
+  </div>
+</div>
+
+</div>
+  <% end %>
+</div>
 <% end %>
+
+<br/>
 
 <div class="row-fluid">
   <div class="span12">

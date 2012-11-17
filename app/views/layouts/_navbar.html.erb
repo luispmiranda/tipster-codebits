@@ -1,7 +1,9 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="http://127.0.0.1:3000">Tipster</a>
+      <%= link_to "Tipster", root_path, :class => "brand"%>
+
+
       <div class="container nav-collapse">
         <ul class="nav pull-right">
           <li>
@@ -15,6 +17,7 @@
                 <% end %>
               <% else %>
                 <%= button_with_icon 'Sign In', citygate.new_user_session_path, 'glyphicons/unlock.png' %>
+
                 <%= button_with_icon 'Sign in with Twitter', '/users/auth/twitter', 'glyphicons/twitter.png' %>
               <% end %>
             </div>

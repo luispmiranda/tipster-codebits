@@ -89,4 +89,32 @@ body {
 		width: 100%;
 		height: 5em;
 	}
+
+
+}
+
+.tip-container {
+.tip-title {
+margin-top: 10px;
+  color: #DD390D;
+  background-color: #FDFDFD;
+  height: 20px;
+    padding: 0 3px 2px;
+  font-family: 'Helvetica Neue', Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 12px;
+
+  font-weight: bold;
+  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+          border-radius: 1px;
+
+}
+}
+
+.down {
+margin-top: 10px;
+}
+
+.fix-margins {
+margin: 10px;
 }

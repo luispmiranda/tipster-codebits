@@ -58,7 +58,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to '/path1' do %>
+                  <%= link_to '/community' do %>
                     <i class='icon-link'></i>
                     <span class="icon">Community</span>
                   <% end %>
@@ -80,7 +80,8 @@
 
               <li class="divider"></li>
 
-
+              <%# if @lists.empty? %>
+              <%# else %>
                 <li class="nav-header">Tiplists</li>
 
                 <% if @user_lists %>
@@ -92,16 +93,18 @@
                     <% end %>
                   </li>
                   <% end %>
-                <% end %>
+                <%# end %>
 
                 <li class="divider"></li>
-
+                <% end %>
               <br/>
-              <%= link_to new_list_path do %>
-                <button>
-                  <i class='icon-plus'></i>
-                  <span class="icon">Add tiplist</span>
-                </button>
+              <% if user_signed_in? %>
+                <%= link_to new_list_path do %>
+                  <button>
+                    <i class='icon-plus'></i>
+                    <span class="icon">Add tiplist</span>
+                  </button>
+                <% end %>
               <% end %>
 
 

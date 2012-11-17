@@ -23,4 +23,7 @@ Tipster::Application.routes.draw do
   match '/feed' => 'feeds#main'
   match '/follows' => 'feeds#follows'
   match '/favorites' => 'feeds#favorites'
+
+
+  match '/community' => 'community#show'
 end

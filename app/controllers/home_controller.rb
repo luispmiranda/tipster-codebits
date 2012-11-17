@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   # layout 'home'
   # GET /
-  def show 
+  def show
   end
 end
