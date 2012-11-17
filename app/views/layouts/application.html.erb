@@ -69,14 +69,15 @@
 
                 <li class="nav-header">Tiplists</li>
 
-                <% @lists.each do |list| %>
-                <% debugger %>
-                 <li>
-                  <%= link_to list_tips_path(list) do %>
-                    <i class='icon-list-ul'></i>
-                    <span class="icon"><%= list.title %></span>
+                <% if @user_lists %>
+                  <% @user_lists.each do |list| %>
+                  <li>
+                    <%= link_to list_path(list) do %>
+                      <i class='icon-list-ul'></i>
+                      <span class="icon"><%= list.title %></span>
+                    <% end %>
+                  </li>
                   <% end %>
-                </li>
                 <% end %>
 
                 <li class="divider"></li>

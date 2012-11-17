@@ -12,6 +12,7 @@ gem "rails_engine_decorators"
 group :development do
   gem 'therubyracer'
   gem 'execjs'
+  gem 'debugger'
 end
 
 

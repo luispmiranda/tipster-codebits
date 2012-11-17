@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery
 
   before_filter :load_user_tips
@@ -15,11 +16,13 @@ class ApplicationController < ActionController::Base
   end
 
 
-  protected
+  #protected
 
     def load_user_tips
-      @lists = []
-      @lists = current_user.lists if user_signed_in?
+      if user_signed_in?
+        @user_lists = current_user.lists.where('id NOT NULL') if user_signed_in?
+        #debugger
+      end
     end
 
 end
