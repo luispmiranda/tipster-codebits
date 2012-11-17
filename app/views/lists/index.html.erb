@@ -1,19 +1,26 @@
-<div class="row-fluid">
-  <div class="span8">
-    <h3><%= current_user.first_name %>'s tiplists</h3>
-  </div>
+<% if user_signed_in? %>
+  <div class="row-fluid">
+    <div class="span8">
+      <h3><%= current_user.first_name %>'s tiplists</h3>
+    </div>
 
-  <div class="span3 down">
-    <div class="btn-group pull-right">
-      <%= link_to new_list_path do %>
-        <button class="btn">
-          <i class="icon-plus"></i>
-          <span class="icon">New List</span>
-        </button>
-      <% end %>
+    <div class="span3 down">
+      <div class="btn-group pull-right">
+        <%= link_to new_list_path do %>
+          <button class="btn">
+            <i class="icon-plus"></i>
+            <span class="icon">New List</span>
+          </button>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-<br/>
+<% else %>
+  <div class="row-fluid">
+    <div class="span12">
+      <h3>Latest tiplists</h3>
+    </div>
+  </div>
+<% end %>
 
 <%= render 'table', :lists => @lists %>

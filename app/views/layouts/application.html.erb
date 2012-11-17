@@ -58,7 +58,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to community_path do %>
+                  <%= link_to '/community' do %>
                     <i class='icon-link'></i>
                     <span class="icon">Community</span>
                   <% end %>
@@ -98,11 +98,13 @@
                 <li class="divider"></li>
                 <% end %>
               <br/>
-              <%= link_to new_list_path do %>
-                <button>
-                  <i class='icon-plus'></i>
-                  <span class="icon">Add tiplist</span>
-                </button>
+              <% if user_signed_in? %>
+                <%= link_to new_list_path do %>
+                  <button>
+                    <i class='icon-plus'></i>
+                    <span class="icon">Add tiplist</span>
+                  </button>
+                <% end %>
               <% end %>
 
 

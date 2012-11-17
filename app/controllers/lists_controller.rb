@@ -6,7 +6,11 @@ class ListsController < ApplicationController
 
   # GET /lists
   def index
-    @lists = List.all
+    if user_signed_in?
+      @lists = List.where(:user_id => current_user.id)
+    else
+      @lists = List.all
+    end
   end
 
   # GET /lists/1
